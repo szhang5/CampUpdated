@@ -283,7 +283,7 @@ h1 span {
 }
 
 .pull-right{
-  margin-left: 70%;
+  float: right;
 }
 
 .header2-for-pages{
