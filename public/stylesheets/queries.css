@@ -78,6 +78,14 @@
   h1 span {
     font-size: 16px;
   }
+
+  header {
+    background-attachment: inherit;
+  }
+  
+  .section-testimonials {
+  background-attachment: inherit;
+  }
       
 }
 
