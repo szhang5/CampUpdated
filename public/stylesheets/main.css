@@ -269,7 +269,7 @@ input[type=submit]:active  {
 
 header {
   /* ? note: can i use two line*/
-  background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(/images/background.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(/images/background5.jpg);
   background-color: #555555d4;
   background-size: cover;
   background-position: center;
@@ -510,7 +510,7 @@ h1 span {
 /* ----------------------------------------------- */
 
 .section-testimonials {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers-min.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/images/background5.jpg);
   color: #fff;
   background-size: cover;
   background-attachment: fixed;
@@ -612,6 +612,11 @@ blockquote {
 .contact-form {
   width: 60%;
   margin: 0 auto;
+}
+
+.input-div {
+  width: 30%; 
+  margin:25px auto;
 }
 
 input[type=text],

@@ -21,7 +21,7 @@
           <ul class="main-nav">
             <li><a href="#reasons" class="active">Why Camping</a></li>
             <li><a href="#tips">Camping tips</a></li>
-            <li><a href="#post">Recently Campgrounds</a></li>
+            <li><a href="#post">Campgrounds</a></li>
             <% if(!currentUser){ %>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Sign Up</a></li> 
@@ -41,7 +41,7 @@
       </div>
     </nav>
     <div class="text-box">
-        <h1>Welcome to YelpCamp!<br><span>View our hand-picked campground all over the world.<span></h1>
+        <h1>Welcome to YelpCamp!<br><span>View hand-picked campground all over the world.<span></h1>
         <a class="btn btn-full js--scroll-to-plans" href="/campgrounds">Let's get start!</a>
         <a class="btn btn-ghost js--scroll-to-start" href="/register">Not a member yet?</a>
     </div>
@@ -88,8 +88,19 @@
     </div>
   </section>
 
-  <section class="section-bar">
+  <!-- <section class="section-bar">
     <div class="bar"></div>
+  </section> -->
+
+  <section class="section-testimonials">
+    <div class="row"> 
+      <div class="container" style="text-align: center">
+         <img src="/images/logo2.png" alt="Logo" width="150px" />
+      </div>
+    </div>
+    <div class="row">
+    
+    </div>
   </section>
 
   <a name="tips"></a>
@@ -142,5 +153,5 @@
   </div>
 </section>
  
-<% include partials/footer2 %>
+<% include partials/footer %>
 
