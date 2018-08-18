@@ -12,12 +12,15 @@ const express             = require("express"),
     User                  = require("./models/user"),
     seedDB                = require("./seeds");
 
-// const env    = process.env.NODE_ENV || "development";
-// if(env == 'development'){
-//   mongoose.connect("mongodb://localhost/yelp_camp");
-// } else {
-//   mongoose.connect(process.env.DATABASEURL);
-// }
+const env= process.env.NODE_ENV || "development";
+if(env == 'development'){
+  mongoose.connect("mongodb://localhost/yelp_camp");
+} else {
+  mongoose.connect(process.env.DATABASEURL);
+  console.log(process.env.DATABASEURL);
+}
+console.log(env);
+
 
 mongoose.connect("mongodb://shiyun:ZSYqq490562824@ds239940.mlab.com:39940/yelpcamp");
     
@@ -62,3 +65,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("The YelpCamp Server has started!");
 });
+
+// app.listen("8080", function(){
+//     console.log("The YelpCamp Server has started!");
+// });
