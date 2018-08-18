@@ -1,4 +1,4 @@
-var express               = require("express"),
+const express             = require("express"),
     app                   = express(),
     bodyParser            = require("body-parser"),
     mongoose              = require("mongoose"),
@@ -11,14 +11,19 @@ var express               = require("express"),
     Comment               = require("./models/comment"),
     User                  = require("./models/user"),
     seedDB                = require("./seeds");
+
+const env    = process.env.NODE_ENV || "development";
+if(env == 'development'){
+  mongoose.connect("mongodb://localhost/yelp_camp");
+} else {
+  mongoose.connect(process.env.DATABASEURL);
+}
     
 //requiring routes
 var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-// mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://shiyun:ZSYqq490562824@ds239940.mlab.com:39940/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
