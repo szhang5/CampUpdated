@@ -5,8 +5,12 @@
       <h2>View All Campgrounds</h2>
     </div>
     
-    <div class="row">
-    <% campgrounds.forEach(function(campground){ %>      
+    
+    <% campgrounds.forEach(function(campground, index){ %> 
+    <% if(index%4 === 0) {%>
+      <div class="row"> 
+    <% } %>
+       
       <div class="col span-1-of-4 box">
         <img src="<%= campground.image %>" alt="campground picture">
         <div class="city-feature">
@@ -15,9 +19,13 @@
         <div class="city-feature">
           <a href="/campgrounds/<%= campground._id %>" class="btn-defult">More Info</a>
         </div>    
-      </div>  
+      </div> 
+
+    <% if(index%4 === 3) {%>
+      </div> 
+    <% } %>
     <% }) %> 
-    </div>
+    
   </section>
    
 <% include ../partials/footer %>
