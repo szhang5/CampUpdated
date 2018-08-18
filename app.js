@@ -12,12 +12,14 @@ const express             = require("express"),
     User                  = require("./models/user"),
     seedDB                = require("./seeds");
 
-const env    = process.env.NODE_ENV || "development";
-if(env == 'development'){
-  mongoose.connect("mongodb://localhost/yelp_camp");
-} else {
-  mongoose.connect(process.env.DATABASEURL);
-}
+// const env    = process.env.NODE_ENV || "development";
+// if(env == 'development'){
+//   mongoose.connect("mongodb://localhost/yelp_camp");
+// } else {
+//   mongoose.connect(process.env.DATABASEURL);
+// }
+
+mongoose.connect("mongodb://shiyun:ZSYqq490562824@ds239940.mlab.com:39940/yelpcamp");
     
 //requiring routes
 var commentRoutes = require("./routes/comments"),
