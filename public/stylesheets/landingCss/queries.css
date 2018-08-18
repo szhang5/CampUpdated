@@ -1,0 +1,156 @@
+@media only screen and (max-width: 1200px) {
+  .hero-text-box {
+    width: 100%;
+    padding: 0 2%;
+  }
+  .row { padding: 0 2%; }
+}
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .long-copy {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .city-feature {
+    font-size: 85%;
+  }
+
+  .icon-small {
+    width: 17px;
+    margin-right: 0;
+  }
+  .app-screen {
+    width: 50%;
+  }
+
+  .steps-box {
+    margin-top: 10px;
+  }
+
+  .steps-box:last-child {
+    margin-top: 10px;
+  }
+
+  .works-step { margin-bottom: 40px; }
+  .works-step:last-of-type { margin-bottom: 60px; }
+
+  .plan-price {
+    font-size:250%;
+  }
+
+  .contact-form {
+    width: 80%;
+  }
+
+  .plan-box {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 180%;
+  }
+
+  h2 {
+    font-size: 150%;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+  .long-copy {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .row,
+  .hero-text-box {
+    padding: 0 4%;
+  }
+
+  .col {
+    width: 100%;
+    margin: 0 0 4% 0;
+  }
+
+  .steps-box:first-child {
+    text-align: center;
+    /* padding: 0; */
+  }
+
+  .app-screen { width: 40%; }
+  .works-step {
+    margin-bottom: 20px;
+  }
+
+  .works-step div {
+    font-size: 120%;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+
+  .works-step:last-of-type {
+    margin-bottom: 20px;
+  }
+  /* mobile nav */
+  .mobile-nav-icon {display: inline-block;}
+  .main-nav { 
+    float: left;
+    margin-top: 40px;
+    margin-left: 25px;
+    height: 0;
+    display: none;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 350ms ease-in, opacity 750ms ease-in-out;
+  }
+
+  .main-nav.is-visible {
+    display: block;
+    height: auto;
+    opacity: 1;
+  }
+
+  .main-nav li {
+    display: block;
+  }
+
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    display: block;
+    border: 0;
+    padding: 10px 0;
+    font-size: 100%;
+  }
+
+  .sticky .main-nav { margin-top: 10px; }
+
+  .sticky .main-nav li a:link,
+  .sticky .main-nav li a:visited { padding: 10px 0; }
+  .sticky .mobile-nav-icon { margin-top: 10px; }
+  .sticky .mobile-nav-icon i { color: #555; }
+  
+}
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  section { padding: 25px 0; }
+  .contact-form {width: 100%; }
+}

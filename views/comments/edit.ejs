@@ -1,0 +1,21 @@
+<% include ../partials/header2 %>
+
+<div class="row" style="margin-top: 5%;">
+    <div class="card">
+      <h2>Edit Comment</h2>
+      <div class="container">
+      <form class="ui form" action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+          <div>
+              <label>Comment</label>
+              <textarea name="comment[text]"><%= comment.text %></textarea>
+          </div>
+          <div>
+            <a class="btn-defult" href="/campgrounds/<%= campground_id %>">Cancel</a>
+            <button class="btn-defult" type="submit" style="padding:10px 30px; background-color: #00b8ff; color:white">Save</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= user.username %> Profile</div>
+    <form class="ui form" action="/userprofile/<%= user._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Username</label>
+            <input type="text" name="user[username]" value="<%= user.username %>">
+        </div>
+        <!--<div class="field"-->
+        <!--    <label>Password</label>-->
+        <!--    <input type="password" placeholder="Password" name="password" id="password" required>-->
+        <!--</div>-->
+        <!-- <div class="field">-->
+        <!--    <label>Comfirm Password</label>-->
+        <!--    <input type="password" placeholder="Confirm Password" name="password" id="confirm_password" required>-->
+        <!--</div>-->
+        <div class="ui buttons">
+          <a class="ui button" href="/campgrounds">Cancel</a>
+          <div class="or"></div>
+          <button class="ui primary button" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+
+<% include ../partials/footer %>

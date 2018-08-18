@@ -1,0 +1,31 @@
+<% include partials/header2 %>
+
+
+<div class="alert">
+      <span class="closebtn">&times;</span>  
+      <strong>Username or Password incorrect!</strong>   
+</div>
+
+
+
+<section class="section-cities">
+    <div class="row">
+        <h2>Login</h2>
+        <div style="width: 30%; margin:25px auto;">
+            <form action="/login" method="POST">
+                <div>
+                    <input type="text" name="username" placeholder="username">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="password">
+                </div>
+                <div>
+                    <input class="btn btn-full" type="submit" value="Login" style="width: 100%;">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
+

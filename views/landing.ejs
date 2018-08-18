@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>YelpCamp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/grid.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/main.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/queries.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="row">
+          <img src="/images/logo.png" alt="Logo" class="logo"/>
+          <img src="/images/logo.png" alt="black-logo" class="logo-black">
+          <ul class="main-nav">
+            <li><a href="#reasons" class="active">Why Camping</a></li>
+            <li><a href="#tips">Camping tips</a></li>
+            <li><a href="#post">Recently Campgrounds</a></li>
+            <% if(!currentUser){ %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Sign Up</a></li> 
+             <% }else{ %> 
+                <div class="dropdown">
+                  <li><a href="#">Hello, <%= currentUser.username %></a><ion-icon name="arrow-dropdown"></ion-icon></li>
+                  <div class="dropdown-content">
+                    <a href="/userprofile/<%= currentUser.id %>"><ion-icon name="person"></ion-icon> Profile</a>
+                    <a href="#"><ion-icon name="settings"></ion-icon> Security</a>
+                    <hr class="logout-hr">
+                    <a style="padding-top:15px; padding-bottom: 15px"href="/logout">Logout</a>
+                  </div>
+                </div>       
+            <% } %>
+          </ul>
+          <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+      </div>
+    </nav>
+    <div class="text-box">
+        <h1>Welcome to YelpCamp!<br><span>View our hand-picked campground all over the world.<span></h1>
+        <a class="btn btn-full js--scroll-to-plans" href="/campgrounds">Let's get start!</a>
+        <a class="btn btn-ghost js--scroll-to-start" href="/register">Not a member yet?</a>
+    </div>
+  </header>
+
+  <a name="reasons"></a>
+  <section class="section-features">
+    <div class="row">
+        <h2>Why camping? &mdash; 4 important reasons.</h2>
+        <p class="long-copy">
+          We all know camping is a fantastic activity, providing hours of enjoyment and a welcome opportunity to connect with loved ones, as well as nature.
+        </p>
+    </div>
+
+    <div class="row">
+      <div class="col span-1-of-4 box">
+        <ion-icon name="construct" class="icon-big"></ion-icon>
+        <h3>Problem solving</h3>
+        <p>
+          Sometimes camping and its associated activities present you with challenges that you don’t deal with on a daily basis: where and how to set up your tent; or how to deal with scenarios where you aren’t armed with all your mod-cons or items of familiarity.
+        </p>
+      </div>
+      <div class="col span-1-of-4 box">
+        <ion-icon name="school" class="icon-big"></ion-icon>
+        <h3>Great for children</h3>
+        <p>
+          Camping introduces children to a whole new world and asks of them an ability to overcome new problems and challenges. Especially in the modern age where many kids are more confident navigating their way around an iPad.
+        </p>
+      </div>
+      <div class="col span-1-of-4 box">
+        <ion-icon name="sunny" class="icon-big"></ion-icon>
+        <h3>Increases vitamin D</h3>
+        <p>
+          Camping provides you with the chance to spend more time in the sun (as long as your timing is right). And more time catching those rays means extra vitamin D, which has benefits for you.
+        </p>
+      </div>
+      <div class="col span-1-of-4 box">
+        <ion-icon name="happy" class="icon-big"></ion-icon>
+        <h3>Makes you happier</h3>
+        <p>
+          Camping goes a long way to improving your mood. It’s all to do with serotonin, that wonderful chemical our body produces that helps to make us happy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-bar">
+    <div class="bar"></div>
+  </section>
+
+  <a name="tips"></a>
+  <section class="section-steps">
+    <div class="row">
+      <h2>How to choose a camping place?</h2>
+    </div>
+  
+    <div class="row">
+      <div class="col span-1-of-2 steps-box">
+        <div class="works-step clearfix">
+          <img src="/images/location.gif" alt="location gif" class="app-screen">
+        </div>
+      </div>
+      <div class="col span-1-of-2 steps-box" >
+        <div class="works-step clearfix">
+          <div>1</div>
+          <p>It’s crucial to pick a spot with flat ground to pitch a tent.</p>
+        </div>
+        <div class="works-step clearfix">
+          <div>2</div>
+          <p>Shade in the morning is a must. Being awoken at 7 a.m. by a blazing hot sun broiling your tent is quite unpleasant.</p>
+        </div>
+        <div class="works-step clearfix">
+          <div>3</div>
+          <p>For the sake of your own safety, always be aware of what’s looming above you and what's around you.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<a name="post"></a>
+<section class="section-cities">
+    <div class="row">
+      <h2>Recently Campgrounds</h2>
+    </div>
+    <% campgrounds.forEach(function(campground){ %>
+        <div class="row">
+          <div class="col span-1-of-4 box">
+            <img src="<%= campground.image %>" alt="campground picture">
+            <div class="city-feature">
+                <h3 style="text-transform: initial;" id="campgroundName"><%= campground.name %></h3>
+            </div>
+            <div class="city-feature">
+              <a href="/campgrounds/<%= campground._id %>" class="btn-defult">More Info</a>
+            </div>    
+        </div>
+    <% }) %>  
+  </section>
+ 
+<% include partials/footer2 %>
+

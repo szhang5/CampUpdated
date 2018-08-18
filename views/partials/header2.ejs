@@ -1,0 +1,58 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>YelpCamp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/grid.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/main.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/landingCss/queries.css">
+</head>
+<body>
+  <header style="height: 20%">
+    <nav>
+      <div class="row">
+          <img src="/images/logo.png" alt="Logo" class="logo"/>
+          <img src="/images/logo.png" alt="black-logo" class="logo-black">
+          <ul class="main-nav">
+            <li><a href="/">HomePage</a></li>
+            <% if(!currentUser){ %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Sign Up</a></li> 
+             <% }else{ %> 
+                <div class="dropdown">
+                  <li><a href="#">Hello, <%= currentUser.username %></a><ion-icon name="arrow-dropdown"></ion-icon></li>
+                  <div class="dropdown-content">
+                    <a href="/userprofile/<%= currentUser.id %>"><ion-icon name="person"></ion-icon> Profile</a>
+                    <a href="#"><ion-icon name="settings"></ion-icon> Security</a>
+                    <hr class="logout-hr">
+                    <a style="padding-top:15px; padding-bottom: 15px"href="/logout">Logout</a>
+                  </div>
+                </div>       
+            <% } %>
+          </ul>
+          <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+      </div>
+    </nav>
+
+  </header>
+
+
+    <% if(error && error.length > 0){%>
+      <div class="alert">
+          <span class="closebtn">&times;</span>  
+          <strong><%= error %></strong>   
+      </div>
+    <% } %>
+      
+    <% if(success && success.length > 0){%>
+      <div class="alert success">
+        <span class="closebtn">&times;</span> 
+        <strong><%= success %></strong>    
+      </div>
+    <% } %>
+    
+    
+ 
