@@ -282,6 +282,16 @@ h1 span {
   font-size: 18px;
 }
 
+.header2-for-pages{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(/images/background3.jpg) !important;
+  background-color: #555555d4;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 20%;
+  background-attachment: inherit;
+}
+
 .logo {
   height: 100px;
   width: auto;
