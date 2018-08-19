@@ -313,6 +313,10 @@ h1 span {
   background-attachment: inherit;
 }
 
+.image-logo{
+  width: 40%;
+}
+
 .logo {
   height: 100px;
   width: auto;
