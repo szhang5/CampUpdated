@@ -303,6 +303,14 @@ h1 span {
   float: right;
 }
 
+#location-image {
+  width: 30%;
+}
+
+#location-text {
+  width:49.2%;
+}
+
 .header2-for-pages{
   background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(/images/background3.jpg) !important;
   background-color: #555555d4;
@@ -492,7 +500,7 @@ h1 span {
 }
 
 .app-screen {
-  width: 40%;
+  width: 60%;
 }
 
 .works-step {
