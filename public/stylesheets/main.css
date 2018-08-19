@@ -84,6 +84,11 @@ h3 {
   margin-bottom: 15px;
 }
 
+.h3-title {
+  font-size: 80%;
+  text-transform: initial;
+}
+
 /* --- LINKS --- */
 a:link,
 a:visited {
@@ -152,6 +157,10 @@ input[type=submit]:active  {
 input[type=submit]:hover,
 input[type=submit]:active  {
   background-color: #bd661a;
+}
+
+#profile-edit-button {
+  /*padding: 10px 4px; */
 }
 
 /* ---- ALERT ----*/
@@ -259,6 +268,14 @@ input[type=submit]:active  {
 .container {
     padding: 2px 16px;
     margin-bottom: 5%;
+}
+
+#div-card {
+  width: 30%;
+}
+
+#div-card-2{
+  width: 68.2%;
 }
 
 
